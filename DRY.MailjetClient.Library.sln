@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRY.MailJetClient.Library", "DRY.MailjetClient.Library\DRY.MailJetClient.Library.csproj", "{41F9C012-DE0E-4765-8CF8-B6C1A85C8117}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41F9C012-DE0E-4765-8CF8-B6C1A85C8117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F9C012-DE0E-4765-8CF8-B6C1A85C8117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F9C012-DE0E-4765-8CF8-B6C1A85C8117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F9C012-DE0E-4765-8CF8-B6C1A85C8117}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E80DCD0-DED4-4C56-ACBA-4D57400FCDAD}
+	EndGlobalSection
+EndGlobal
