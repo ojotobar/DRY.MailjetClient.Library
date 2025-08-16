@@ -3,6 +3,7 @@ using Mailjet.Client;
 using Newtonsoft.Json.Linq;
 using DRY.MailJetClient.Library.Settings;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace DRY.MailJetClient.Library
 {
@@ -11,10 +12,10 @@ namespace DRY.MailJetClient.Library
         private readonly IMailjetClient mailClient;
         private readonly MailSettings settings;
 
-        public MailjetClientService(IMailjetClient mailClient, MailSettings settings)
+        public MailjetClientService(IMailjetClient mailClient, IOptions<MailSettings> options)
         {
             this.mailClient = mailClient;
-            this.settings = settings;
+            this.settings = options.Value;
         }
 
         /// <summary>
@@ -41,8 +42,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email",settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email",settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {
@@ -93,8 +94,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email",settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email",settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {
@@ -153,8 +154,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email", settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email", settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {
@@ -223,8 +224,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email", settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email", settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {
@@ -288,8 +289,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email", settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email", settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {
@@ -342,8 +343,8 @@ namespace DRY.MailJetClient.Library
                             {
                                 "From",new JObject
                                 {
-                                    {"Email", settings.SenderEmail},
-                                    {"Name", settings.SenderName}
+                                    {"Email", settings.Email},
+                                    {"Name", settings.AppName}
                                 }
                             },
                             {

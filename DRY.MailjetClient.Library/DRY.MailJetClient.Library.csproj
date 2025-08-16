@@ -5,19 +5,25 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>DRY.MailJetClient.Library</PackageId>
-	<Version>1.0.0-rc1</Version>
+	<Version>2.0.0-rc</Version>
 	<PackageTags>Mailjet;Email</PackageTags>
 	<Authors>Ojo Toba Rufus</Authors>
 	<Description>
 		Extension library to work with mailjet client.
 	</Description>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<RepositoryUrl>https://github.com/ojotobar/DRYMailjetClientLibrary</RepositoryUrl>
+	<Copyright>Copyright (c) Ojo Toba R.</Copyright>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+	<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
 	<PackageReference Include="Mailjet.Api" Version="3.0.0" />
 	<PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
-	<PackageReference Include="CSharpTypes.Extensions" Version="1.0.0-rc1" />
+	<PackageReference Include="CSharpTypes.Extensions" Version="1.0.0" />
+	<None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>

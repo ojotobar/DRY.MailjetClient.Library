@@ -1,22 +1,21 @@
 ﻿using DRY.MailJetClient.Library.Settings;
 using Mailjet.Client;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DRY.MailJetClient.Library.Extensions
 {
     public static class ServiceExtensions
     {
-        public static IServiceCollection ConfigureMailJet(this IServiceCollection services, 
-            string apiKey, string apiSecret, string mailjetEmail, string mailjetName)
+        public static IServiceCollection ConfigureMailJet(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton(_ =>
-            {
-                return MailSettings.Initialize(mailjetEmail, mailjetName);
-            });
+            var settings = configuration.GetSection("DryMailClient")
+                .Get<MailSettings>() ?? throw new ArgumentNullException();
 
-            services.AddHttpClient<IMailjetClient, MailjetClient>(client =>
+            services.Configure<MailSettings>(configuration.GetSection("DryMailClient"));
+            services.AddHttpClient<IMailjetClient, MailjetClient>(sp =>
             {
-                client.UseBasicAuthentication(apiKey, apiSecret);
+                sp.UseBasicAuthentication(settings.ApiKey, settings.ApiSecret);
             });
 
             services.AddScoped<IMailjetClientService, MailjetClientService>();
